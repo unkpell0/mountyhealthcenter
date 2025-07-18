@@ -218,7 +218,7 @@ const Header = () => {
 
                 {/* Sidebar */}
                 <aside
-                    className={`fixed top-0 right-0 h-full w-full max-w-xs bg-background shadow-xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background shadow-xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="sidebar-title"
@@ -257,7 +257,7 @@ const Hero = () => (
             className="bg-primary text-white py-16 sm:py-20"
         >
             <div className="container mx-auto px-6 text-center relative z-10">
-                <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight initial-hidden animate-fadeInDown">HANGOVER PACKAGES</h1>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight initial-hidden animate-fadeInDown">HANGOVER PACKAGES</h1>
                 <p className="max-w-3xl mx-auto text-base sm:text-lg mb-8 font-light initial-hidden animate-fadeInUp animation-delay-200">
                     Specifically designed to combat the symptoms of a hangover, our Hangover Packages offer fast relief through IV hydration, ensuring you recover quickly and comfortably right at your villa or hotel.
                 </p>
@@ -308,21 +308,21 @@ const PackageCard: React.FC<{ packageInfo: HangoverPackage }> = ({ packageInfo }
 };
 
 const ServiceCard: React.FC<{ service: OtherService }> = ({ service }) => (
-    <div className="text-center group h-full flex flex-col p-2">
+    <div className="text-center group h-full flex flex-col">
          <div className="relative mb-6">
-             <div className="bg-white rounded-2xl shadow-lg w-full h-40 sm:h-44 flex items-center justify-center hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                 <service.icon className="w-16 h-16 sm:w-20 sm:h-20 text-accent/80 transition-transform duration-300 group-hover:scale-110"/>
+             <div className="bg-white rounded-2xl shadow-lg w-full h-44 flex items-center justify-center hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                 <service.icon className="w-20 h-20 text-accent/80 transition-transform duration-300 group-hover:scale-110"/>
              </div>
-             <div className="absolute -bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2">
-                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent rounded-full flex items-center justify-center shadow-lg border-4 border-background-alt">
-                     <StarIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white"/>
+             <div className="absolute -bottom-5 left-1/2 -translate-x-1/2">
+                 <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-lg border-4 border-background-alt">
+                     <StarIcon className="w-7 h-7 text-white"/>
                  </div>
              </div>
          </div>
-         <div className="flex flex-col flex-grow px-1 sm:px-2">
-            <h3 className="font-bold text-base sm:text-lg text-primary mt-2 sm:mt-4">{service.title}</h3>
+         <div className="flex flex-col flex-grow px-2">
+            <h3 className="font-bold text-lg text-primary mt-4">{service.title}</h3>
             <p className="text-secondary text-sm my-2 flex-grow">{service.description}</p>
-            <a href="#contact" className="mt-auto bg-accent text-white font-semibold px-6 py-2 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-sm inline-block hover:shadow-lg hover:-translate-y-0.5">
+            <a href="#contact" className="mt-4 bg-accent text-white font-semibold px-6 py-2 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-sm inline-block hover:shadow-lg hover:-translate-y-0.5">
                Book Now
            </a>
          </div>
@@ -403,15 +403,15 @@ const Carousel = <T extends {}>({
                 onClick={handlePrevClick} 
                 aria-label="Previous slide" 
                 disabled={currentIndex === 0}
-                className="p-2 rounded-full bg-white/70 backdrop-blur-sm border border-border-color text-secondary hover:bg-white transition absolute left-0 sm:-left-2 top-1/2 -translate-y-1/2 z-10 shadow-md hover:shadow-lg disabled:opacity-30 disabled:cursor-not-allowed">
-                <ArrowLeftIcon className="w-5 h-5"/>
+                className="p-3 rounded-full bg-white/70 backdrop-blur-sm border border-border-color text-secondary hover:bg-white transition absolute -left-4 top-1/2 -translate-y-1/2 z-10 shadow-md hover:shadow-lg disabled:opacity-30 disabled:cursor-not-allowed">
+                <ArrowLeftIcon className="w-6 h-6"/>
             </button>
              <button 
                 onClick={handleNextClick} 
                 aria-label="Next slide" 
                 disabled={currentIndex >= maxIndex}
-                className="p-2 rounded-full bg-white/70 backdrop-blur-sm border border-border-color text-secondary hover:bg-white transition absolute right-0 sm:-right-2 top-1/2 -translate-y-1/2 z-10 shadow-md hover:shadow-lg disabled:opacity-30 disabled:cursor-not-allowed">
-                <ArrowRightIcon className="w-5 h-5"/>
+                className="p-3 rounded-full bg-white/70 backdrop-blur-sm border border-border-color text-secondary hover:bg-white transition absolute -right-4 top-1/2 -translate-y-1/2 z-10 shadow-md hover:shadow-lg disabled:opacity-30 disabled:cursor-not-allowed">
+                <ArrowRightIcon className="w-6 h-6"/>
             </button>
         </div>
     );
@@ -422,7 +422,7 @@ const HangoverPackagesSection = () => {
     return (
         <AnimatedSection as="section" id="hangover-packages" className="py-16 sm:py-20 bg-background-alt">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">HANGOVER PACKAGES</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">HANGOVER PACKAGES</h2>
                 <Carousel
                     items={hangoverPackagesData}
                     renderItem={(pkg) => <PackageCard packageInfo={pkg as HangoverPackage} />}
@@ -508,7 +508,7 @@ const HowItWorksSection = () => {
     return (
         <AnimatedSection as="section" className="py-16 sm:py-20 bg-white">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-20 text-center text-primary">WHAT TO EXPECT. STEP BY STEP</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-20 text-center text-primary">WHAT TO EXPECT. STEP BY STEP</h2>
                 <div className="space-y-16 md:space-y-20">
                     {steps.map((step, index) => (
                         <AnimatedSection key={step.title} as="div">
@@ -556,7 +556,7 @@ const OtherServicesSection = () => {
     return (
         <AnimatedSection as="section" className="py-16 sm:py-20 bg-background-alt">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">IV DRIPS AT YOUR VILLA OR HOTEL</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">IV DRIPS AT YOUR VILLA OR HOTEL</h2>
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                     <div className="lg:col-span-2">
                         <Carousel
@@ -565,7 +565,7 @@ const OtherServicesSection = () => {
                             itemsToShow={{ mobile: 1, tablet: 2, desktop: 2 }}
                         />
                     </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-lg border border-border-color mt-8 lg:mt-0">
+                    <div className="bg-white p-6 rounded-2xl shadow-lg border border-border-color mt-12 lg:mt-0">
                         <h3 className="font-bold text-xl text-primary mb-4">WORKING HOURS</h3>
                         <p className="text-secondary text-sm mb-4">Find our opening times below</p>
                         <div className="space-y-3">
@@ -614,7 +614,7 @@ const Footer = () => {
                     <h3 className="font-bold mb-4 text-lg">Quick Links</h3>
                     <ul className="space-y-2">
                         {Object.entries(navLinks).map(([name, href]) => (
-                            <li key={name}><a href={href} className="text-gray-300 text-sm hover:text-white transition-colors">{name}</a></li>
+                            <li key={name}><a href={href} className="text-gray-300 text-sm hover:text-white transition-colors inline-block py-1">{name}</a></li>
                         ))}
                     </ul>
                 </div>
