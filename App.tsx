@@ -151,7 +151,7 @@ const Header = () => {
             <header className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm">
                 {/* Top Bar */}
                 <div className="bg-background-alt border-b border-border-color hidden md:block">
-                    <div className="container mx-auto px-6 py-2 flex justify-end items-center text-sm text-secondary space-x-6">
+                    <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-end items-center text-sm text-secondary space-x-6">
                         <a href="tel:+6285142740977" className="flex items-center hover:text-accent transition-colors">
                             <PhoneIcon className="w-4 h-4 mr-2"/>
                             +62 851-4274-0977
@@ -161,7 +161,7 @@ const Header = () => {
 
                 {/* Main Nav */}
                 <div className="border-b border-border-color">
-                    <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+                    <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
                         <a href="#" className="flex items-center">
                             <span className="font-bold text-base sm:text-lg text-primary uppercase">Mounty Health Center</span>
                         </a>
@@ -294,9 +294,9 @@ const Header = () => {
 const Hero = () => (
     <>
         <section 
-            className="bg-primary text-white py-16 sm:py-20"
+            className="bg-primary text-white py-12 sm:py-16"
         >
-            <div className="container mx-auto px-6 text-center relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight initial-hidden animate-fadeInDown">PREMIUM IV THERAPY & AT-HOME WELLNESS</h1>
                 <p className="max-w-3xl mx-auto text-base sm:text-lg mb-8 font-light initial-hidden animate-fadeInUp animation-delay-200">
                     Your trusted partner in Bali for rapid recovery and wellness. We specialize in IV therapies for Bali Belly, hangovers, immune boosts, painless tattoos, and provide convenient at-home lab tests.
@@ -367,7 +367,7 @@ const Carousel: React.FC<{ items: any[]; renderItem: (item: any, index: number) 
                     <button 
                         onClick={goPrev} 
                         disabled={!canGoPrev}
-                        className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-lg border border-border-color disabled:opacity-50 disabled:cursor-not-allowed transition-opacity hover:bg-background-alt z-10"
+                        className="absolute top-1/2 left-2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg border border-border-color disabled:opacity-50 disabled:cursor-not-allowed transition-opacity hover:bg-background-alt z-10"
                         aria-label="Previous"
                     >
                         <ArrowLeftIcon className="w-6 h-6 text-primary" />
@@ -375,7 +375,7 @@ const Carousel: React.FC<{ items: any[]; renderItem: (item: any, index: number) 
                     <button 
                         onClick={goNext} 
                         disabled={!canGoNext}
-                        className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-lg border border-border-color disabled:opacity-50 disabled:cursor-not-allowed transition-opacity hover:bg-background-alt z-10"
+                        className="absolute top-1/2 right-2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg border border-border-color disabled:opacity-50 disabled:cursor-not-allowed transition-opacity hover:bg-background-alt z-10"
                         aria-label="Next"
                     >
                         <ArrowRightIcon className="w-6 h-6 text-primary" />
@@ -391,7 +391,7 @@ const PackageCard: React.FC<{ packageInfo: HangoverPackage }> = ({ packageInfo }
     const contentRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className="bg-white border border-border-color rounded-2xl p-6 flex flex-col w-full h-full relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+        <div className="bg-white border border-border-color rounded-2xl p-4 sm:p-6 flex flex-col w-full h-full relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
             {packageInfo.popular && <div className="absolute top-4 -right-12 bg-accent text-white text-xs font-bold px-12 py-1.5 transform rotate-45">POPULAR</div>}
             <div className="flex-grow">
                 <h3 className="text-xl font-bold text-accent mb-4 h-14">{packageInfo.title}</h3>
@@ -422,8 +422,8 @@ const PackageCard: React.FC<{ packageInfo: HangoverPackage }> = ({ packageInfo }
 };
 
 const PainlessTattooSection = () => (
-    <AnimatedSection as="section" id="painless-tattoo" className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-6">
+    <AnimatedSection as="section" id="painless-tattoo" className="py-12 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                 <div className="flex justify-center items-center bg-background-alt p-8 rounded-2xl h-full min-h-[280px] sm:min-h-[350px] order-last lg:order-first">
                     <TattooIcon className="w-32 h-32 sm:w-40 sm:h-40 text-accent" />
@@ -451,8 +451,8 @@ const PainlessTattooSection = () => (
 );
 
 const BaliBellySection = () => (
-    <AnimatedSection as="section" id="bali-belly" className="py-16 sm:py-20 bg-background-alt">
-        <div className="container mx-auto px-6">
+    <AnimatedSection as="section" id="bali-belly" className="py-12 sm:py-16 bg-background-alt">
+        <div className="container mx-auto px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                  <div className="flex justify-center items-center bg-white p-8 rounded-2xl h-full min-h-[280px] sm:min-h-[350px]">
                     <StomachIcon className="w-32 h-32 sm:w-40 sm:h-40 text-accent" />
@@ -472,8 +472,8 @@ const BaliBellySection = () => (
 
 const HangoverPackagesSection = () => {
     return (
-        <AnimatedSection as="section" id="hangover-packages" className="py-16 sm:py-20 bg-white">
-            <div className="container mx-auto px-6">
+        <AnimatedSection as="section" id="hangover-packages" className="py-12 sm:py-16 bg-white">
+            <div className="container mx-auto px-4 sm:px-6">
                 <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                     <div className="order-last lg:order-first">
                         <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4">FEELING HANGOVER? WE HELP YOU.</h2>
@@ -501,8 +501,8 @@ const HangoverPackagesSection = () => {
 };
 
 const ImmuneBoosterSection = () => (
-    <AnimatedSection as="section" id="immune-booster" className="py-16 sm:py-20 bg-background-alt">
-        <div className="container mx-auto px-6">
+    <AnimatedSection as="section" id="immune-booster" className="py-12 sm:py-16 bg-background-alt">
+        <div className="container mx-auto px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                 <div className="flex justify-center items-center bg-white p-8 rounded-2xl h-full min-h-[280px] sm:min-h-[350px]">
                     <HeartIcon className="w-32 h-32 sm:w-40 sm:h-40 text-accent" />
@@ -521,8 +521,8 @@ const ImmuneBoosterSection = () => (
 );
 
 const LabTestsSection = () => (
-    <AnimatedSection as="section" id="lab-tests" className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-6">
+    <AnimatedSection as="section" id="lab-tests" className="py-12 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
                 <div className="order-last lg:order-first">
                     <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4">AT-HOME LABORATORY TESTS</h2>
@@ -562,7 +562,7 @@ const Footer = () => {
     
     return (
         <footer className="bg-primary text-white">
-            <div className="container mx-auto px-6 py-16">
+            <div className="container mx-auto px-4 sm:px-6 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* About */}
                     <div className="md:col-span-2 lg:col-span-1">
@@ -616,7 +616,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="bg-black/20 py-4">
-                 <div className="container mx-auto px-6 text-center text-xs text-gray-400">
+                 <div className="container mx-auto px-4 sm:px-6 text-center text-xs text-gray-400">
                     &copy; {new Date().getFullYear()} Mounty Health Center. All Rights Reserved.
                  </div>
             </div>
