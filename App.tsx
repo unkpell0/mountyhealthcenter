@@ -557,7 +557,7 @@ const OtherServicesSection = () => {
         <AnimatedSection as="section" className="py-16 sm:py-20 bg-background-alt">
             <div className="container mx-auto px-6">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">IV DRIPS AT YOUR VILLA OR HOTEL</h2>
-                <div className="grid lg:grid-cols-3 gap-8 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                     <div className="lg:col-span-2">
                         <Carousel
                             items={otherServicesData}
@@ -565,7 +565,7 @@ const OtherServicesSection = () => {
                             itemsToShow={{ mobile: 1, tablet: 2, desktop: 2 }}
                         />
                     </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-lg border border-border-color mt-12 lg:mt-0">
+                    <div className="bg-white p-6 rounded-2xl shadow-lg border border-border-color lg:col-span-1">
                         <h3 className="font-bold text-xl text-primary mb-4">WORKING HOURS</h3>
                         <p className="text-secondary text-sm mb-4">Find our opening times below</p>
                         <div className="space-y-3">
