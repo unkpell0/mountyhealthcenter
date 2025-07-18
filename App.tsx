@@ -32,7 +32,6 @@ const PlaneIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://w
 const hangoverPackagesData: HangoverPackage[] = [
     { 
         title: "Hangover Basic", 
-        price: "RP 1.200K", 
         inclusions: [
             "Premium Hydration",
             "Comfort Support Infusion",
@@ -45,7 +44,6 @@ const hangoverPackagesData: HangoverPackage[] = [
     },
     { 
         title: "Hangover Premium", 
-        price: "RP 1.900K", 
         popular: true, 
         inclusions: [
             "Premium Hydration Blend",
@@ -61,7 +59,6 @@ const hangoverPackagesData: HangoverPackage[] = [
     },
     { 
         title: "Hangover Super Premium", 
-        price: "RP 2.300K", 
         inclusions: [
             "Premium Hydration Blend",
             "Comfort Support Infusion",
@@ -184,7 +181,7 @@ const Header = () => {
                 <div className="border-b border-border-color">
                     <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                         <a href="#" className="flex items-center">
-                            <span className="font-bold text-lg text-primary uppercase">Mounty Health Center</span>
+                            <span className="font-bold text-base sm:text-lg text-primary uppercase">Mounty Health Center</span>
                         </a>
 
                         {/* Desktop Nav */}
@@ -257,19 +254,19 @@ const Header = () => {
 const Hero = () => (
     <>
         <section 
-            className="bg-primary text-white py-32 md:py-48"
+            className="bg-primary text-white py-16 sm:py-20"
         >
             <div className="container mx-auto px-6 text-center relative z-10">
-                <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight initial-hidden animate-fadeInDown">HANGOVER PACKAGES</h1>
-                <p className="max-w-3xl mx-auto text-lg md:text-xl mb-8 font-light initial-hidden animate-fadeInUp animation-delay-200">
+                <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight initial-hidden animate-fadeInDown">HANGOVER PACKAGES</h1>
+                <p className="max-w-3xl mx-auto text-base sm:text-lg mb-8 font-light initial-hidden animate-fadeInUp animation-delay-200">
                     Specifically designed to combat the symptoms of a hangover, our Hangover Packages offer fast relief through IV hydration, ensuring you recover quickly and comfortably right at your villa or hotel.
                 </p>
-                <a href="#hangover-packages" className="bg-white text-accent font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl initial-hidden animate-fadeInUp animation-delay-400 inline-block">
+                <a href="#hangover-packages" className="bg-white text-accent font-bold py-2.5 px-6 text-base sm:py-3 sm:px-8 sm:text-lg rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl initial-hidden animate-fadeInUp animation-delay-400 inline-block">
                     Book Now
                 </a>
             </div>
         </section>
-        <div className="bg-accent text-white font-semibold text-center py-3 text-sm tracking-wider">
+        <div className="bg-accent text-white font-semibold text-center py-3 px-4 text-sm tracking-wider">
             24/7 PROFESSIONAL WELLNESS CARE | FREE HOME DELIVERY
         </div>
     </>
@@ -283,8 +280,7 @@ const PackageCard: React.FC<{ packageInfo: HangoverPackage }> = ({ packageInfo }
         <div className="bg-white border border-border-color rounded-2xl p-6 flex flex-col w-full h-full relative overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
             {packageInfo.popular && <div className="absolute top-4 -right-12 bg-accent text-white text-xs font-bold px-12 py-1.5 transform rotate-45">POPULAR</div>}
             <div className="flex-grow">
-                <h3 className="text-2xl font-bold text-accent mb-1">{packageInfo.title}</h3>
-                <p className="text-3xl font-extrabold text-primary mb-6">{packageInfo.price}</p>
+                <h3 className="text-xl font-bold text-accent mb-4">{packageInfo.title}</h3>
                 <button 
                     onClick={() => setIsOpen(!isOpen)}
                     className="w-full flex justify-between items-center text-left py-3 border-t border-b border-border-color text-secondary hover:text-primary transition-colors"
@@ -300,7 +296,7 @@ const PackageCard: React.FC<{ packageInfo: HangoverPackage }> = ({ packageInfo }
                     <ul className="space-y-3 pt-4">
                         {packageInfo.inclusions.map((item, i) => (
                             <li key={i} className="flex items-center text-secondary">
-                                <CheckIcon className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                                <CheckIcon className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -312,167 +308,125 @@ const PackageCard: React.FC<{ packageInfo: HangoverPackage }> = ({ packageInfo }
 };
 
 const ServiceCard: React.FC<{ service: OtherService }> = ({ service }) => (
-    <div className="text-center group h-full flex flex-col">
-         <div className="relative mb-8">
-             <div className="bg-white rounded-2xl shadow-lg w-full h-48 flex items-center justify-center hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                 <service.icon className="w-20 h-20 text-accent/80 transition-transform duration-300 group-hover:scale-110"/>
+    <div className="text-center group h-full flex flex-col p-2">
+         <div className="relative mb-6">
+             <div className="bg-white rounded-2xl shadow-lg w-full h-40 sm:h-44 flex items-center justify-center hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                 <service.icon className="w-16 h-16 sm:w-20 sm:h-20 text-accent/80 transition-transform duration-300 group-hover:scale-110"/>
              </div>
-             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg border-4 border-background-alt">
-                     <StarIcon className="w-8 h-8 text-white"/>
+             <div className="absolute -bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2">
+                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent rounded-full flex items-center justify-center shadow-lg border-4 border-background-alt">
+                     <StarIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white"/>
                  </div>
              </div>
          </div>
-         <div className="flex flex-col flex-grow">
-            <h3 className="font-bold text-xl text-primary mt-4">{service.title}</h3>
-            <p className="text-secondary text-sm my-2 px-2 flex-grow">{service.description}</p>
-            <a href="#contact" className="mt-2 bg-accent text-white font-semibold px-6 py-2 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-sm inline-block hover:shadow-lg hover:-translate-y-0.5">
+         <div className="flex flex-col flex-grow px-1 sm:px-2">
+            <h3 className="font-bold text-base sm:text-lg text-primary mt-2 sm:mt-4">{service.title}</h3>
+            <p className="text-secondary text-sm my-2 flex-grow">{service.description}</p>
+            <a href="#contact" className="mt-auto bg-accent text-white font-semibold px-6 py-2 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-sm inline-block hover:shadow-lg hover:-translate-y-0.5">
                Book Now
            </a>
          </div>
     </div>
 );
 
-
 const Carousel = <T extends {}>({ 
     items, 
     renderItem, 
-    itemsToShow: itemsToShowProp = { mobile: 1, tablet: 2, desktop: 3 },
-    autoplay = false,
-    autoplayInterval = 4000
+    itemsToShow: itemsToShowProp = { mobile: 1, tablet: 2, desktop: 3 }
 }: { 
     items: T[], 
     renderItem: (item: T) => React.ReactNode, 
-    itemsToShow?: { mobile: number, tablet: number, desktop: number },
-    autoplay?: boolean,
-    autoplayInterval?: number
+    itemsToShow?: { mobile: number, tablet: number, desktop: number }
 }) => {
     const [slidesToShow, setSlidesToShow] = useState(itemsToShowProp.desktop);
-    const [currentIndex, setCurrentIndex] = useState(slidesToShow);
-    const trackRef = useRef<HTMLDivElement>(null);
-    const carouselRef = useRef<HTMLDivElement>(null);
-    const intervalRef = useRef<number | null>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const touchStartX = useRef(0);
-
+    
     const getSlidesToShow = useCallback(() => {
+        if (typeof window === 'undefined') return itemsToShowProp.desktop;
         if (window.innerWidth >= 1024) return itemsToShowProp.desktop;
         if (window.innerWidth >= 768) return itemsToShowProp.tablet;
         return itemsToShowProp.mobile;
     }, [itemsToShowProp]);
 
     useEffect(() => {
-        const handleResize = () => setSlidesToShow(getSlidesToShow());
+        const handleResize = () => {
+            const newSlidesToShow = getSlidesToShow();
+            setSlidesToShow(newSlidesToShow);
+            setCurrentIndex(0);
+        };
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [getSlidesToShow]);
 
-    const itemsWithClones = useMemo(() => {
-        if (!items.length) return [];
-        const clonesStart = items.slice(-slidesToShow);
-        const clonesEnd = items.slice(0, slidesToShow);
-        return [...clonesStart, ...items, ...clonesEnd];
-    }, [items, slidesToShow]);
+    const maxIndex = items.length > slidesToShow ? items.length - slidesToShow : 0;
 
-    const changeSlide = useCallback(() => {
-        setCurrentIndex(prev => prev + 1);
-    }, []);
-
-    const resetAutoplay = useCallback(() => {
-        if (intervalRef.current) clearInterval(intervalRef.current);
-        if (autoplay) {
-            intervalRef.current = window.setInterval(changeSlide, autoplayInterval);
-        }
-    }, [autoplay, autoplayInterval, changeSlide]);
-
-    useEffect(() => {
-        resetAutoplay();
-        return () => {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
-    }, [resetAutoplay]);
-
-    useEffect(() => {
-        const carouselElement = carouselRef.current;
-        const pauseAutoplay = () => { if (intervalRef.current) clearInterval(intervalRef.current); };
-        if (carouselElement && autoplay) {
-            carouselElement.addEventListener('mouseenter', pauseAutoplay);
-            carouselElement.addEventListener('mouseleave', resetAutoplay);
-        }
-        return () => {
-            if (carouselElement && autoplay) {
-                carouselElement.removeEventListener('mouseenter', pauseAutoplay);
-                carouselElement.removeEventListener('mouseleave', resetAutoplay);
-            }
-        };
-    }, [autoplay, resetAutoplay]);
+    const handlePrevClick = () => {
+        setCurrentIndex(prev => Math.max(0, prev - 1));
+    };
 
     const handleNextClick = () => {
-        changeSlide();
-        resetAutoplay();
+        setCurrentIndex(prev => Math.min(maxIndex, prev + 1));
     };
-    
+
     const handleTouchStart = (e: React.TouchEvent) => {
-        if (intervalRef.current) clearInterval(intervalRef.current);
         touchStartX.current = e.touches[0].clientX;
     };
     
     const handleTouchEnd = (e: React.TouchEvent) => {
         const touchEndX = e.changedTouches[0].clientX;
-        if (touchStartX.current - touchEndX > 50) { // Swipe left to go next
-            changeSlide();
-        }
-        resetAutoplay();
-    };
-
-    const handleTransitionEnd = () => {
-        if (currentIndex >= items.length + slidesToShow) {
-            if (trackRef.current) trackRef.current.style.transition = 'none';
-            setCurrentIndex(slidesToShow);
-            // Force reflow to apply the new position instantly before re-enabling transition
-            void trackRef.current?.offsetHeight; 
-            if (trackRef.current) trackRef.current.style.transition = 'transform 0.5s ease-in-out';
+        if (touchStartX.current - touchEndX > 50) {
+            handleNextClick();
+        } else if (touchStartX.current - touchEndX < -50) {
+            handlePrevClick();
         }
     };
 
     if (!items.length) return null;
 
     return (
-        <div ref={carouselRef} className="relative">
-            <div className="flex items-center justify-center">
-                <div className="w-full overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-                    <div
-                        ref={trackRef}
-                        className="flex"
-                        style={{
-                            transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)`,
-                            transition: 'transform 0.5s ease-in-out',
-                        }}
-                        onTransitionEnd={handleTransitionEnd}
-                    >
-                        {itemsWithClones.map((item, index) => (
-                            <div key={index} style={{ flex: `0 0 ${100 / slidesToShow}%` }} className="px-2 md:px-4">
-                                {renderItem(item)}
-                            </div>
-                        ))}
-                    </div>
+        <div className="relative">
+            <div className="overflow-hidden" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+                <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * (100 / slidesToShow)}%)` }}
+                >
+                    {items.map((item, index) => (
+                        <div key={index} style={{ flex: `0 0 ${100 / slidesToShow}%` }} className="px-3 h-full">
+                            {renderItem(item)}
+                        </div>
+                    ))}
                 </div>
-                 <button onClick={handleNextClick} className="p-3 rounded-full bg-white border border-border-color text-secondary hover:bg-gray-100 transition absolute -right-4 top-1/2 -translate-y-1/2 z-10 hidden sm:block"><ArrowRightIcon className="w-6 h-6"/></button>
             </div>
+             <button 
+                onClick={handlePrevClick} 
+                aria-label="Previous slide" 
+                disabled={currentIndex === 0}
+                className="p-2 rounded-full bg-white/70 backdrop-blur-sm border border-border-color text-secondary hover:bg-white transition absolute left-0 sm:-left-2 top-1/2 -translate-y-1/2 z-10 shadow-md hover:shadow-lg disabled:opacity-30 disabled:cursor-not-allowed">
+                <ArrowLeftIcon className="w-5 h-5"/>
+            </button>
+             <button 
+                onClick={handleNextClick} 
+                aria-label="Next slide" 
+                disabled={currentIndex >= maxIndex}
+                className="p-2 rounded-full bg-white/70 backdrop-blur-sm border border-border-color text-secondary hover:bg-white transition absolute right-0 sm:-right-2 top-1/2 -translate-y-1/2 z-10 shadow-md hover:shadow-lg disabled:opacity-30 disabled:cursor-not-allowed">
+                <ArrowRightIcon className="w-5 h-5"/>
+            </button>
         </div>
     );
-}
+};
+
 
 const HangoverPackagesSection = () => {
     return (
-        <AnimatedSection as="section" id="hangover-packages" className="py-20 md:py-24 bg-background-alt">
+        <AnimatedSection as="section" id="hangover-packages" className="py-16 sm:py-20 bg-background-alt">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">HANGOVER PACKAGES</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">HANGOVER PACKAGES</h2>
                 <Carousel
                     items={hangoverPackagesData}
                     renderItem={(pkg) => <PackageCard packageInfo={pkg as HangoverPackage} />}
                     itemsToShow={{ mobile: 1, tablet: 2, desktop: 3 }}
-                    autoplay={true}
                 />
             </div>
         </AnimatedSection>
@@ -481,26 +435,26 @@ const HangoverPackagesSection = () => {
 
 
 const HangoverInfoSection = () => (
-    <AnimatedSection as="section" className="py-20 md:py-24 bg-white">
+    <AnimatedSection as="section" className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="flex justify-center items-center bg-background-alt p-12 rounded-2xl h-full min-h-[300px]">
-                    <CocktailIcon className="w-40 h-40 text-accent" />
+            <div className="grid lg:grid-cols-2 gap-10 md:gap-12 items-center">
+                <div className="flex justify-center items-center bg-background-alt p-8 rounded-2xl h-full min-h-[280px] sm:min-h-[350px]">
+                    <CocktailIcon className="w-32 h-32 sm:w-40 sm:h-40 text-accent" />
                 </div>
                 <div>
-                    <h2 className="text-3xl font-bold text-primary mb-4">FEELING HANGOVER? WE HELP YOU.</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4">FEELING HANGOVER? WE HELP YOU.</h2>
                     <p className="text-secondary mb-4">A hangover can dehydrate you rapidly, especially with symptoms like:</p>
                     <div className="space-y-3 mb-4">
                         <div className="flex items-start">
-                            <CheckIcon className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" />
+                            <CheckIcon className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-1" />
                             <span className="text-secondary">Headaches</span>
                         </div>
                         <div className="flex items-start">
-                            <CheckIcon className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" />
+                            <CheckIcon className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-1" />
                             <span className="text-secondary">Nausea</span>
                         </div>
                         <div className="flex items-start">
-                            <CheckIcon className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-1" />
+                            <CheckIcon className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-1" />
                             <span className="text-secondary">Vomiting</span>
                         </div>
                     </div>
@@ -513,12 +467,12 @@ const HangoverInfoSection = () => (
 );
 
 const CTASection = () => (
-    <AnimatedSection as="section" className="py-16 bg-background-alt">
+    <AnimatedSection as="section" className="py-12 sm:py-16">
         <div className="container mx-auto px-6">
-            <div className="bg-accent text-white rounded-2xl p-12 text-center">
-                <h2 className="text-3xl font-bold mb-2">READY FOR YOUR TREATMENT?</h2>
+            <div className="bg-accent text-white rounded-2xl p-8 sm:p-10 text-center">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-2">READY FOR YOUR TREATMENT?</h2>
                 <p className="mb-6">We can come to you so you can feel as comfortable as possible.</p>
-                <a href="#contact" className="bg-white text-accent font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition-all duration-300 shadow-md inline-block transform hover:scale-105">
+                <a href="#contact" className="bg-white text-accent font-bold py-2.5 px-6 text-base sm:py-3 sm:px-8 sm:text-lg rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-md inline-block transform hover:scale-105">
                     Book An Appointment
                 </a>
             </div>
@@ -552,19 +506,19 @@ const HowItWorksSection = () => {
     ];
 
     return (
-        <AnimatedSection as="section" className="py-20 md:py-24 bg-white">
+        <AnimatedSection as="section" className="py-16 sm:py-20 bg-white">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center text-primary">WHAT TO EXPECT. STEP BY STEP</h2>
-                <div className="space-y-20">
+                <h2 className="text-3xl sm:text-4xl font-bold mb-12 sm:mb-20 text-center text-primary">WHAT TO EXPECT. STEP BY STEP</h2>
+                <div className="space-y-16 md:space-y-20">
                     {steps.map((step, index) => (
                         <AnimatedSection key={step.title} as="div">
                             <div className={`grid lg:grid-cols-2 gap-12 items-center ${index === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                                <div className={`flex justify-center items-center bg-background-alt p-12 rounded-2xl min-h-[400px] h-full ${index === 1 ? 'lg:col-start-2' : ''}`}>
-                                     <step.icon className="w-48 h-48 text-accent" />
+                                <div className={`flex justify-center items-center bg-background-alt p-8 sm:p-12 rounded-2xl min-h-[300px] lg:min-h-[400px] h-full ${index === 1 ? 'lg:col-start-2' : ''}`}>
+                                     <step.icon className="w-28 h-28 lg:w-36 lg:h-36 text-accent" />
                                 </div>
                                 <div className={`flex flex-col justify-center ${index === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                                     <step.icon className="w-12 h-12 text-accent mb-4" />
-                                    <h3 className="text-4xl font-bold text-accent mb-4">{step.title}</h3>
+                                    <h3 className="text-2xl sm:text-3xl font-bold text-accent mb-4">{step.title}</h3>
                                     {step.description && <p className="text-secondary flex items-center gap-2"><CheckIcon className="w-6 h-6 text-accent"/>{step.description}</p>}
                                     {step.details && (
                                         <ul className="space-y-2 my-4">
@@ -600,16 +554,15 @@ const OtherServicesSection = () => {
     ];
     
     return (
-        <AnimatedSection as="section" className="py-20 md:py-24 bg-background-alt">
+        <AnimatedSection as="section" className="py-16 sm:py-20 bg-background-alt">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-primary">IV DRIPS AT YOUR VILLA OR HOTEL</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary">IV DRIPS AT YOUR VILLA OR HOTEL</h2>
                 <div className="grid lg:grid-cols-3 gap-8 items-start">
                     <div className="lg:col-span-2">
                         <Carousel
                             items={otherServicesData}
                             renderItem={(service) => <ServiceCard service={service as OtherService} />}
                             itemsToShow={{ mobile: 1, tablet: 2, desktop: 2 }}
-                            autoplay={true}
                         />
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-lg border border-border-color mt-8 lg:mt-0">
@@ -617,7 +570,7 @@ const OtherServicesSection = () => {
                         <p className="text-secondary text-sm mb-4">Find our opening times below</p>
                         <div className="space-y-3">
                             {workingHours.map(item => (
-                                <div key={item.day} className="flex justify-between items-center text-sm border-t border-border-color pt-3">
+                                <div key={item.day} className="flex flex-col items-start gap-1 md:flex-row md:items-center md:justify-between text-sm border-t border-border-color pt-3 pb-1">
                                     <span className="text-primary font-medium">{item.day}</span>
                                     <span className="text-secondary">{item.hours}</span>
                                 </div>
@@ -643,22 +596,21 @@ const Footer = () => {
     return (
     <footer id="contact" className="bg-primary text-white">
         <div className="container mx-auto px-6 pt-16 pb-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
                 {/* Column 1: Logo & Social */}
-                <div>
+                <div className="md:col-span-2 lg:col-span-1 text-center md:text-left">
                     <div className="flex justify-center md:justify-start items-center mb-4">
                         <span className="font-bold text-lg uppercase">Mounty Health Center</span>
                     </div>
-                    <p className="text-gray-300 text-sm mb-6">Health Treatments at the comfort of your home. From general assessments, hangover cures, vitamins boosts to bali belly relief packages and wound treatments.</p>
+                    <p className="text-gray-300 text-sm mb-6 max-w-sm mx-auto md:mx-0">Health Treatments at the comfort of your home. From general assessments, hangover cures, vitamins boosts to bali belly relief packages and wound treatments.</p>
                     <div className="flex gap-4 justify-center md:justify-start">
                         <a href="#" className="text-gray-300 hover:text-white transition-colors"><InstagramIcon className="w-6 h-6"/></a>
                         <a href="#" className="text-gray-300 hover:text-white transition-colors"><FacebookIcon className="w-6 h-6"/></a>
                     </div>
                 </div>
                 
-                {/* Column 2 & 3: Nav Links */}
-                <div></div> {/* Empty column for spacing on large screens */}
-                 <div>
+                {/* Column 2: Quick Links */}
+                 <div className="text-center sm:text-left">
                     <h3 className="font-bold mb-4 text-lg">Quick Links</h3>
                     <ul className="space-y-2">
                         {Object.entries(navLinks).map(([name, href]) => (
@@ -667,23 +619,23 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Column 4: Get in Touch */}
-                <div>
+                {/* Column 3: Get in Touch */}
+                <div className="text-center sm:text-left">
                     <h3 className="font-bold mb-4 text-lg">Get In Touch</h3>
                     <address className="not-italic text-sm text-gray-300 space-y-4">
-                        <div className="flex items-start justify-center md:justify-start">
+                        <div className="flex items-start justify-center sm:justify-start">
                            <LocationMarkerIcon className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0" />
                            <span>Jl. Kepaon indah No.8, Pemogan, Denpasar Selatan</span>
                         </div>
-                        <div className="flex items-center justify-center md:justify-start">
+                        <div className="flex items-center justify-center sm:justify-start">
                            <MailIcon className="w-5 h-5 mr-3 flex-shrink-0" />
                            <a href="mailto:mail@example.com" className="hover:text-white">mail@example.com</a>
                         </div>
-                        <div className="flex items-center justify-center md:justify-start">
+                        <div className="flex items-center justify-center sm:justify-start">
                            <WhatsappIcon className="w-5 h-5 mr-3 flex-shrink-0" />
                            <a href="https://wa.me/6285142740977" className="hover:text-white">+62 851-4274-0977</a>
                         </div>
-                        <div className="flex items-center justify-center md:justify-start">
+                        <div className="flex items-center justify-center sm:justify-start">
                             <ClockIcon className="w-5 h-5 mr-3 flex-shrink-0" />
                             <span>24/7 Open</span>
                         </div>
@@ -691,12 +643,11 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="border-t border-gray-700 mt-12 pt-6 text-center text-xs text-gray-400">
-                <p>&copy; {new Date().getFullYear()} Copyright | Putu Trisnawan</p>
-                <p>Developed by Mounty Health Center</p>
+            <div className="border-t border-gray-700 mt-10 pt-6 sm:mt-12 text-center text-xs text-gray-400">
+                <p>&copy; {new Date().getFullYear()} Mounty Health Center | All Rights Reserved.</p>
             </div>
         </div>
-        <a href="https://wa.me/6285142740977" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50">
+        <a href="https://wa.me/6285142740977" target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 bg-green-500 text-white p-3.5 rounded-full shadow-lg hover:bg-green-600 transition-transform hover:scale-110 z-50">
             <WhatsappIcon className="w-8 h-8"/>
         </a>
     </footer>
