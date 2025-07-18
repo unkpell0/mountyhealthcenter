@@ -11,13 +11,11 @@ const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="htt
 const PlusIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>;
 const MinusIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" /></svg>;
 const CheckIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>;
-const MenuIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>;
-const XIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>;
 const HeartIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>;
 const StomachIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>;
 const CocktailIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 15.75V4.5" /><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5h7.5" /></svg>;
-const MicroscopeIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>;
 const TattooIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.62a8.983 8.983 0 013.362-3.362c.329-.125.65-.244.974-.344z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214C14.054 4.195 12.216 3 10.5 3 7.239 3 4.5 5.739 4.5 9c0 1.954.962 3.743 2.5 4.95.42.327.855.623 1.312.883C9.366 16.273 10.5 17.25 10.5 18.75c0 .792.297 1.518.791 2.082M16.5 9.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>;
+const MicroscopeIcon = (props: React.SVGProps<SVGSVGElement>) => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>;
 
 
 // DATA ========================================================================
@@ -112,182 +110,36 @@ const AnimatedSection: React.FC<{ children: React.ReactNode; className?: string;
 
 // COMPONENTS ==================================================================
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-    const [openMobileSubMenu, setOpenMobileSubMenu] = useState<string | null>(null);
-
-    const navLinks = [
-      {
-        name: 'Packages',
-        href: '#',
-        dropdown: [
-          { name: 'Painless Tattoo', href: '#painless-tattoo' },
-          { name: 'Bali Belly Packages', href: '#bali-belly' },
-          { name: 'Hangover Packages', href: '#hangover-packages' },
-          { name: 'Immune Booster', href: '#immune-booster' },
-          { name: 'Lab Tests', href: '#lab-tests' },
-          { name: 'Doctor On Call', href: '#lab-tests' },
-        ],
-      },
-    ];
-    
-    useEffect(() => {
-        if (isMenuOpen) {
-            document.body.classList.add('overflow-hidden');
-        } else {
-            document.body.classList.remove('overflow-hidden');
-        }
-        return () => {
-            document.body.classList.remove('overflow-hidden');
-        };
-    }, [isMenuOpen]);
-
-    const handleMobileSubMenuToggle = (name: string) => {
-        setOpenMobileSubMenu(openMobileSubMenu === name ? null : name);
-    };
-
     return (
-        <>
-            <header className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm">
-                {/* Top Bar */}
-                <div className="bg-background-alt border-b border-border-color hidden md:block">
-                    <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-end items-center text-sm text-secondary space-x-6">
-                        <a href="tel:+6285142740977" className="flex items-center hover:text-accent transition-colors">
-                            <PhoneIcon className="w-4 h-4 mr-2"/>
-                            +62 851-4274-0977
+        <header className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm">
+            {/* Top Bar */}
+            <div className="bg-background-alt border-b border-border-color hidden md:block">
+                <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-end items-center text-sm text-secondary space-x-6">
+                    <a href="tel:+6285142740977" className="flex items-center hover:text-accent transition-colors">
+                        <PhoneIcon className="w-4 h-4 mr-2"/>
+                        +62 851-4274-0977
+                    </a>
+                </div>
+            </div>
+
+            {/* Main Nav */}
+            <div className="border-b border-border-color">
+                <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+                    <a href="/" className="flex items-center">
+                        <span className="font-bold text-base sm:text-lg text-primary uppercase">Mounty Health Center</span>
+                    </a>
+
+                    <div className="flex items-center gap-4">
+                        <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
+                            <InstagramIcon className="w-6 h-6"/>
+                        </a>
+                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-accent text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5 text-sm">
+                            Book Now
                         </a>
                     </div>
                 </div>
-
-                {/* Main Nav */}
-                <div className="border-b border-border-color">
-                    <div className="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-                        <a href="#" className="flex items-center">
-                            <span className="font-bold text-base sm:text-lg text-primary uppercase">Mounty Health Center</span>
-                        </a>
-
-                        {/* Desktop Nav */}
-                        <nav className="hidden lg:flex items-center space-x-6">
-                           {navLinks.map(link => (
-                                <div 
-                                    key={link.name} 
-                                    className="relative"
-                                    onMouseEnter={() => link.dropdown && setOpenDropdown(link.name)}
-                                    onMouseLeave={() => link.dropdown && setOpenDropdown(null)}
-                                >
-                                    <a 
-                                        href={link.href} 
-                                        className="font-semibold text-sm flex items-center gap-1 text-primary hover:text-accent transition-colors"
-                                    >
-                                        {link.name}
-                                        {link.dropdown && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
-                                        )}
-                                    </a>
-                                    {link.dropdown && openDropdown === link.name && (
-                                        <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-white rounded-md shadow-lg py-1 z-20 border border-border-color/50">
-                                            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white transform rotate-45 border-t border-l border-border-color/50"></div>
-                                            {link.dropdown.map(item => (
-                                                <a 
-                                                    key={item.name} 
-                                                    href={item.href} 
-                                                    className="block px-4 py-2 text-sm text-primary hover:bg-background-alt transition-colors"
-                                                >
-                                                    {item.name}
-                                                </a>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </nav>
-
-                        <div className="flex items-center gap-4">
-                            <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors hidden sm:inline"><InstagramIcon className="w-6 h-6"/></a>
-                            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-accent text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-0.5 text-sm hidden sm:inline-block">
-                                Book Now
-                            </a>
-                            
-                            {/* Mobile menu button */}
-                            <button onClick={() => setIsMenuOpen(true)} className="lg:hidden text-primary p-2" aria-label="Open menu">
-                                <MenuIcon className="w-6 h-6" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
-            {/* Mobile Sidebar & Overlay */}
-            <>
-                <div
-                    className={`fixed inset-0 bg-primary/40 z-40 transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                    onClick={() => setIsMenuOpen(false)}
-                    aria-hidden="true"
-                ></div>
-                <aside
-                    className={`fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background shadow-xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="sidebar-title"
-                >
-                    <div className="flex justify-between items-center p-4 border-b border-border-color">
-                        <h2 id="sidebar-title" className="font-bold text-lg text-primary uppercase">Menu</h2>
-                        <button onClick={() => setIsMenuOpen(false)} className="p-2" aria-label="Close menu">
-                            <XIcon className="w-6 h-6 text-primary" />
-                        </button>
-                    </div>
-                    <nav className="flex flex-col h-full p-4">
-                        <div className="flex-grow space-y-2">
-                           {navLinks.map(link => (
-                                <div key={link.name}>
-                                    {link.dropdown ? (
-                                        <>
-                                            <button 
-                                                onClick={() => handleMobileSubMenuToggle(link.name)}
-                                                className="w-full flex justify-between items-center font-semibold text-lg text-left py-2 px-3 rounded-md text-primary hover:bg-gray-100 transition-colors"
-                                            >
-                                                <span>{link.name}</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={`w-5 h-5 transition-transform ${openMobileSubMenu === link.name ? 'rotate-180' : ''}`}><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" /></svg>
-                                            </button>
-                                            {openMobileSubMenu === link.name && (
-                                                <div className="pl-6 pt-1 pb-2 space-y-1">
-                                                    {link.dropdown.map(item => (
-                                                        <a 
-                                                            key={item.name} 
-                                                            href={item.href} 
-                                                            onClick={() => setIsMenuOpen(false)}
-                                                            className="block font-medium text-md text-left py-1.5 px-3 rounded-md text-secondary hover:bg-gray-100 transition-colors"
-                                                        >
-                                                            {item.name}
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </>
-                                    ) : (
-                                        <a 
-                                            href={link.href} 
-                                            onClick={() => setIsMenuOpen(false)} 
-                                            className="block font-semibold text-lg text-left py-2 px-3 rounded-md text-primary hover:bg-gray-100 transition-colors"
-                                        >
-                                            {link.name}
-                                        </a>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                        <div className="mt-6 pt-6 border-t border-border-color">
-                             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className="w-full text-center bg-accent text-white font-semibold px-5 py-3 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-base">
-                                Book Now
-                            </a>
-                            <div className="flex justify-center gap-6 mt-6">
-                                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors"><InstagramIcon className="w-8 h-8"/></a>
-                            </div>
-                        </div>
-                    </nav>
-                </aside>
-            </>
-        </>
+            </div>
+        </header>
     );
 };
 
@@ -527,7 +379,7 @@ const LabTestsSection = () => (
                 <div className="order-last lg:order-first">
                     <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4">AT-HOME LABORATORY TESTS</h2>
                     <p className="text-secondary mb-4">Health concerns can't wait. We provide professional, on-call lab testing services in the comfort of your home or hotel. Get peace of mind without the hassle of clinic visits.</p>
-                     <div className="space-y-3 mb-4">
+                    <div className="space-y-3 mb-6">
                         <div className="flex items-start">
                             <CheckIcon className="w-6 h-6 text-accent mr-3 flex-shrink-0 mt-1" />
                             <span className="text-secondary"><strong>Dengue Fever Test:</strong> Quick and accurate on-site testing for dengue fever, a common concern in tropical climates.</span>
@@ -537,7 +389,7 @@ const LabTestsSection = () => (
                             <span className="text-secondary"><strong>Other Standard Tests:</strong> Contact us for a full range of available laboratory tests.</span>
                         </div>
                     </div>
-                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-4 bg-accent text-white font-semibold px-8 py-3 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-center inline-block hover:shadow-lg hover:-translate-y-0.5">
+                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-accent text-white font-semibold px-8 py-3 rounded-lg hover:bg-accent-hover transition-all duration-300 shadow-sm text-center inline-block hover:shadow-lg hover:-translate-y-0.5">
                         Request a Lab Test
                     </a>
                 </div>
